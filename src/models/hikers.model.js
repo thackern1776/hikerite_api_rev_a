@@ -40,6 +40,7 @@ module.exports = function (app) {
   hikers.associate = function (models) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
+    hikers.belongsToMany(models.trails, { through: 'hikers_trails' })
   };
 
   return hikers;
